@@ -13,6 +13,8 @@
 		B4A92CB41AAA4C9300BCF8A7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4A92CB31AAA4C9300BCF8A7 /* Images.xcassets */; };
 		B4A92CB71AAA4C9300BCF8A7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4A92CB51AAA4C9300BCF8A7 /* LaunchScreen.xib */; };
 		B4A92CC31AAA4C9300BCF8A7 /* StormyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A92CC21AAA4C9300BCF8A7 /* StormyTests.swift */; };
+		B4A92CCD1AAA4F7600BCF8A7 /* apiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A92CCC1AAA4F7600BCF8A7 /* apiKey.swift */; };
+		B4A92CD01AAA500500BCF8A7 /* apiKey.plist in Resources */ = {isa = PBXBuildFile; fileRef = B4A92CCF1AAA500500BCF8A7 /* apiKey.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		B4A92CBC1AAA4C9300BCF8A7 /* StormyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StormyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4A92CC11AAA4C9300BCF8A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4A92CC21AAA4C9300BCF8A7 /* StormyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StormyTests.swift; sourceTree = "<group>"; };
+		B4A92CCC1AAA4F7600BCF8A7 /* apiKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = apiKey.swift; sourceTree = "<group>"; };
+		B4A92CCF1AAA500500BCF8A7 /* apiKey.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = apiKey.plist; path = Stormy/apiKey.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,7 @@
 		B4A92C9E1AAA4C9300BCF8A7 = {
 			isa = PBXGroup;
 			children = (
+				B4A92CCF1AAA500500BCF8A7 /* apiKey.plist */,
 				B4A92CA91AAA4C9300BCF8A7 /* Stormy */,
 				B4A92CBF1AAA4C9300BCF8A7 /* StormyTests */,
 				B4A92CA81AAA4C9300BCF8A7 /* Products */,
@@ -79,6 +84,7 @@
 			children = (
 				B4A92CAC1AAA4C9300BCF8A7 /* AppDelegate.swift */,
 				B4A92CAE1AAA4C9300BCF8A7 /* ViewController.swift */,
+				B4A92CCE1AAA4F8200BCF8A7 /* Models */,
 				B4A92CB01AAA4C9300BCF8A7 /* Main.storyboard */,
 				B4A92CB31AAA4C9300BCF8A7 /* Images.xcassets */,
 				B4A92CB51AAA4C9300BCF8A7 /* LaunchScreen.xib */,
@@ -110,6 +116,14 @@
 				B4A92CC11AAA4C9300BCF8A7 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B4A92CCE1AAA4F8200BCF8A7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B4A92CCC1AAA4F7600BCF8A7 /* apiKey.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4A92CB21AAA4C9300BCF8A7 /* Main.storyboard in Resources */,
+				B4A92CD01AAA500500BCF8A7 /* apiKey.plist in Resources */,
 				B4A92CB71AAA4C9300BCF8A7 /* LaunchScreen.xib in Resources */,
 				B4A92CB41AAA4C9300BCF8A7 /* Images.xcassets in Resources */,
 			);
@@ -213,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4A92CAF1AAA4C9300BCF8A7 /* ViewController.swift in Sources */,
+				B4A92CCD1AAA4F7600BCF8A7 /* apiKey.swift in Sources */,
 				B4A92CAD1AAA4C9300BCF8A7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

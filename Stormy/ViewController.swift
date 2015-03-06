@@ -9,6 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    private let clientID = valueForAPIKey(keyname:"MyAPIClientID")
 
     override func viewDidLoad() {
         super.viewDidLoad()
