@@ -39,7 +39,7 @@
 		B4A92CC11AAA4C9300BCF8A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4A92CC21AAA4C9300BCF8A7 /* StormyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StormyTests.swift; sourceTree = "<group>"; };
 		B4A92CCC1AAA4F7600BCF8A7 /* apiKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = apiKey.swift; sourceTree = "<group>"; };
-		B4A92CCF1AAA500500BCF8A7 /* apiKey.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = apiKey.plist; path = Stormy/apiKey.plist; sourceTree = "<group>"; };
+		B4A92CCF1AAA500500BCF8A7 /* apiKey.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = apiKey.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +63,6 @@
 		B4A92C9E1AAA4C9300BCF8A7 = {
 			isa = PBXGroup;
 			children = (
-				B4A92CCF1AAA500500BCF8A7 /* apiKey.plist */,
 				B4A92CA91AAA4C9300BCF8A7 /* Stormy */,
 				B4A92CBF1AAA4C9300BCF8A7 /* StormyTests */,
 				B4A92CA81AAA4C9300BCF8A7 /* Products */,
@@ -82,6 +81,7 @@
 		B4A92CA91AAA4C9300BCF8A7 /* Stormy */ = {
 			isa = PBXGroup;
 			children = (
+				B4A92CCF1AAA500500BCF8A7 /* apiKey.plist */,
 				B4A92CAC1AAA4C9300BCF8A7 /* AppDelegate.swift */,
 				B4A92CAE1AAA4C9300BCF8A7 /* ViewController.swift */,
 				B4A92CCE1AAA4F8200BCF8A7 /* Models */,
