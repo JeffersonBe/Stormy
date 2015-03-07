@@ -86,7 +86,6 @@
 				B4A92CCF1AAA500500BCF8A7 /* apiKey.plist */,
 				B4A92CAC1AAA4C9300BCF8A7 /* AppDelegate.swift */,
 				B4A92CAE1AAA4C9300BCF8A7 /* ViewController.swift */,
-				B420FD0F1AAB3ECD00AF694D /* Current.swift */,
 				B4A92CCE1AAA4F8200BCF8A7 /* Models */,
 				B4A92CB01AAA4C9300BCF8A7 /* Main.storyboard */,
 				B4A92CB31AAA4C9300BCF8A7 /* Images.xcassets */,
@@ -124,6 +123,7 @@
 		B4A92CCE1AAA4F8200BCF8A7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B420FD0F1AAB3ECD00AF694D /* Current.swift */,
 				B4A92CCC1AAA4F7600BCF8A7 /* apiKey.swift */,
 			);
 			name = Models;

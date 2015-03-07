@@ -18,7 +18,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var humidityLabel: UILabel!
     @IBOutlet weak var precipitationLabel: UILabel!
     @IBOutlet weak var summaryLabel: UILabel!
-    
     @IBOutlet weak var refreshButton: UIButton!
     @IBOutlet weak var refreshActivityIndicator: UIActivityIndicatorView!
     
@@ -26,14 +25,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view, typically from a nib.
-        
-        refreshActivityIndicator.hidden = true
+        refreshActivityIndicator.hidden = false
         getCurrentWeatherData()
     }
     
     func getCurrentWeatherData() -> Void {
         let baseURL = NSURL(string: "https://api.forecast.io/forecast/\(apiKey)/")
-        let forecastURL = NSURL(string: "52.474096,-1.908412", relativeToURL: baseURL)
+        let forecastURL = NSURL(string: "52.474096,-1.908412?units=si", relativeToURL: baseURL)
         
         let sharedSession = NSURLSession.sharedSession()
         let downloadTask: NSURLSessionDownloadTask = sharedSession.downloadTaskWithURL(forecastURL!, completionHandler: { (location: NSURL!, response: NSURLResponse!, error: NSError!) -> Void in
@@ -53,7 +51,7 @@ class ViewController: UIViewController {
                     
                     // Stop refreshing the button
                     self.refreshActivityIndicator.startAnimating()
-                    self.refreshActivityIndicator.hidden = false
+                    self.refreshActivityIndicator.hidden = true
                     self.refreshButton.hidden = false
                 })
                 
@@ -71,7 +69,7 @@ class ViewController: UIViewController {
                 self.presentViewController(networkIssueController, animated: true, completion: nil)
                 
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
-
+                    
                     // Stop refreshing the button
                     self.refreshActivityIndicator.startAnimating()
                     self.refreshActivityIndicator.hidden = false
