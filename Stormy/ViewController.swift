@@ -28,7 +28,10 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         refreshActivityIndicator.hidden = true
-        
+        getCurrentWeatherData()
+    }
+    
+    func getCurrentWeatherData() -> Void {
         let baseURL = NSURL(string: "https://api.forecast.io/forecast/\(apiKey)/")
         let forecastURL = NSURL(string: "52.474096,-1.908412", relativeToURL: baseURL)
         
@@ -47,22 +50,41 @@ class ViewController: UIViewController {
                     self.humidityLabel.text = "\(currentWeather.humidity)"
                     self.precipitationLabel.text = "\(currentWeather.precipProbability)"
                     self.summaryLabel.text = "\(currentWeather.summary)"
+                    
+                    // Stop refreshing the button
+                    self.refreshActivityIndicator.startAnimating()
+                    self.refreshActivityIndicator.hidden = false
+                    self.refreshButton.hidden = false
+                })
+                
+            } else {
+                
+                // Create AlertView when receiving fromg etCurrentWeatherData()
+                
+                let networkIssueController = UIAlertController(title: "", message: "Seems like you don't have internet", preferredStyle: .Alert)
+                let okButtonOnNetworkIssue = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                networkIssueController.addAction(okButtonOnNetworkIssue)
+                
+                let cancelButtonNetworkIssue = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+                networkIssueController.addAction(cancelButtonNetworkIssue)
+                
+                self.presentViewController(networkIssueController, animated: true, completion: nil)
+                
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+
+                    // Stop refreshing the button
+                    self.refreshActivityIndicator.startAnimating()
+                    self.refreshActivityIndicator.hidden = false
+                    self.refreshButton.hidden = false
                 })
             }
         })
         
         downloadTask.resume()
-    
     }
-    
-    func getCurrentData() {
-        
-    }
-    
-    
-    
     
     @IBAction func refresh(sender: AnyObject) {
+        getCurrentWeatherData()
         refreshButton.hidden = true
         refreshActivityIndicator.hidden = false
         refreshActivityIndicator.startAnimating()

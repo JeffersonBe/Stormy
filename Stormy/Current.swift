@@ -12,7 +12,7 @@ import UIKit
 struct Current {
     
     var currentTime: String?
-    var temperature: Int
+    var temperature: Double
     var humidity: Double
     var precipProbability: Double
     var summary: String
@@ -21,7 +21,9 @@ struct Current {
     init(weatherDictionary: NSDictionary) {
         let currentWeather = weatherDictionary["currently"] as! NSDictionary
         
-        temperature = currentWeather["temperature"] as! Int
+        let fahrenheit = currentWeather["temperature"] as! Double
+        temperature = (((fahrenheit - 32) * 5) / 9)
+        
         humidity = currentWeather["humidity"] as! Double
         precipProbability = currentWeather["precipProbability"] as! Double
         summary = currentWeather["summary"] as! String
