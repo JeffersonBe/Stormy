@@ -12,10 +12,23 @@ class ViewController: UIViewController {
     
     private let apiKey = valueForAPIKey(keyname:"API_SECRET")
 
+    @IBOutlet weak var iconView: UIImageView!
+    @IBOutlet weak var currenTimeLabel: UILabel!
+    @IBOutlet weak var temperatureLabel: UILabel!
+    @IBOutlet weak var humidityLabel: UILabel!
+    @IBOutlet weak var precipitationLabel: UILabel!
+    @IBOutlet weak var summaryLabel: UILabel!
+    
+    @IBOutlet weak var refreshButton: UIButton!
+    @IBOutlet weak var refreshActivityIndicator: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view, typically from a nib.
+        
+        refreshActivityIndicator.hidden = true
+        
         let baseURL = NSURL(string: "https://api.forecast.io/forecast/\(apiKey)/")
         let forecastURL = NSURL(string: "52.474096,-1.908412", relativeToURL: baseURL)
         
@@ -27,20 +40,38 @@ class ViewController: UIViewController {
                 let weatherDictionary: NSDictionary = NSJSONSerialization.JSONObjectWithData(dataObject!, options: nil, error: nil) as! NSDictionary
                 
                 let currentWeather = Current(weatherDictionary: weatherDictionary)
-                println(currentWeather.currentTime!)
+                dispatch_async(dispatch_get_main_queue(),{ () -> Void in
+                    self.iconView.image = currentWeather.icon!
+                    self.currenTimeLabel.text = "At \(currentWeather.currentTime!) it is"
+                    self.temperatureLabel.text = "\(currentWeather.temperature)"
+                    self.humidityLabel.text = "\(currentWeather.humidity)"
+                    self.precipitationLabel.text = "\(currentWeather.precipProbability)"
+                    self.summaryLabel.text = "\(currentWeather.summary)"
+                })
             }
-
         })
         
         downloadTask.resume()
     
+    }
+    
+    func getCurrentData() {
+        
+    }
+    
+    
+    
+    
+    @IBAction func refresh(sender: AnyObject) {
+        refreshButton.hidden = true
+        refreshActivityIndicator.hidden = false
+        refreshActivityIndicator.startAnimating()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
 
 }
 
